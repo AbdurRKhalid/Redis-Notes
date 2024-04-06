@@ -9,3 +9,11 @@ The Redis can be used in multiple ways such as:
 * Message queue
 * Message broker
 and many more all it depends upon the use case.
+
+## Basic Data-types
+The followings are the basic Data-types in the Redis:
+* Strings
+* Hash
+* Set
+* Lists
+Each data-type has its own use and can be used according to specific case and scenario.
