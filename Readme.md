@@ -36,3 +36,25 @@ _If we have two sets and we want to get results (unio) of boths of those sets th
 
 _If we want to check if one value exists in Set or not we can do the following:_
 `SISMEMBER names yoshi` This command will return the '0' because yoshi does not exists in the set. If it existed in set then the value would have been 1.
+
+## List Operations
+It is interesting to note that Lists in Redis are like Linked-Lists. It means that the each memeber inside a list knows the address or have information about the member next to it. The operations for lists are different as compared to Sets because in Lists we can have multiple same values like we can have multiple names like two "mario" etc.
+
+List works similar to QUEUE, First In and Last Out format. We have a head and we have a tail in terms of the Linked List.
+
+`LPUSH orders no1` this command will create a list called 'orders' othewise it will use the already created one, after that it will push "no1" value inside the list. The value will be inserted at the front of the list it is important to note. LPUSH can also be rememberd as pushing to a list from Left.
+
+`RPUSH orders no2` this command will insert the value at the end of the list.
+RPUSH can also be remembered as pushing to a list from Right.
+
+`LPOP orders 1` this command will remove or pop an item from the left from the list.
+
+`RPOP orders 1` this command will remove or pop an item from the right from the list.
+
+`LLEN orders` this command will give us the length of the list.
+
+`LRANGE orders 0 1` this command will give us the elements which are between index of 0 to 1.
+
+`LINDEX orders 2` this command will give us the element that is stored at the index 2.
+
+`LPOS orders no1` this command will give us the position of value "no1" inside the orders list.
