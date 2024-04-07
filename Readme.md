@@ -58,3 +58,22 @@ RPUSH can also be remembered as pushing to a list from Right.
 `LINDEX orders 2` this command will give us the element that is stored at the index 2.
 
 `LPOS orders no1` this command will give us the position of value "no1" inside the orders list.
+
+## Hashes Operations
+In Redis Hash is data-type similar to a simple JSON object, but there are some restrictions that includes, the Hashes cannot have nested properties or objects. This can be used to save simple objects.
+
+`HSET books:1 title "Some Random Title"` Here in this command 'books:1' is the name of the hash, actually the books is the name for hash to be created successfully it should have an id attached to it. 'title' is one property and 'Some Random Title' is the value of that property.
+
+`HSET books:1 title "Override Title"` Here this command will override the title property of set named 'books:1'.
+
+`HSET books:1 title ... author ... rating ...` Here this command will add multiple properties and values to hash.
+
+`HGET books:1 title` Here this command will return the title property value inside the 'books:1' hash.
+
+`HEXISTS books:1 title` Here this command will return '0' or '1' based on the fact that if 'books:1' has property called 'title'.
+
+`HDEL books:1 title` Here this command will delete the property named 'title' with value in it for the hash called 'books:1'.
+
+`DEL books:1` This command will delete the whole hash.
+
+`HVALS books:1` This command will return all the values of a hash without properties.
